@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+:root {
+  --warna-hijau1: #153109;
+  --warna-hijau2: #728d5a;
+  --warna-terang: #ebf1b1;
+  --warna-terang2: #ebfadd;
+  --warna-putih: #ffff;
+}
+
+body {
+    background-color: #e9f7e4; 
+  }
+
+.container {
+  display: flex;
+  height: 100vh;
+  padding: 1rem;
+}
+
+.left-section {
+  flex: 1;
+  background: url("ini\ bg.svg") no-repeat center center;
+  background-size: cover; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-section {
+  flex: 1;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 40px 0 0 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  margin: 1rem; 
+}
+
+a{
+  color: #ccc;
+  text-decoration: none;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.logo {
+  width: 150px;
+  margin-bottom: 1rem;
+}
+
+.form-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.form-container label {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+}
+
+.form-container button[type="submit"] {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  background-color: var(--warna-hijau1);
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: var(--warna-hijau2);
+  color: var(--warna-hijau1);
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-buttons button {
+  background-color: #eee;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.terms {
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: 1rem;
+}
+
+.terms a {
+  color: #4caf50;
+  text-decoration: none;
+}

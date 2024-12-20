@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Login</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+</head>
+<body>
+  <div class="container">
+    <div class="left-section">
+      <div class="illustration">
+        <img src="ini bg.svg" alt="Illustration"/>
+      </div>
+    </div>
+
+    <div class="right-section">
+      <div class="form-container">
+        <img src="Screenshot 2024-10-11 222044 1.svg" alt="Logo" class="logo">
+        <h1>Selamat Datang <br>Admin</h1>
+
+        <form action="login.php" method="POST">
+          <label for="username">Nama Pengguna:</label>
+          <input type="text" id="username" name="username" required>
+
+          <label for="pasword">Kata Sandi:</label>
+          <input type="password" id="password" name="password" required>
+
+          <button type="submit">Login</button>
+        </form>
+        <p class="terms">By creating an account you agree to our <a href="#">Terms of Services</a> and <a href="#">Privacy Policy</a>.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

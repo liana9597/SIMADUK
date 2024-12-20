@@ -1,0 +1,485 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+:root {
+  --warna-hijau1: #153109;
+  --warna-hijau2: #728d5a;
+  --warna-terang: #ebf1b1;
+  --warna-terang2: #ebfadd;
+  --warna-putih: #ffff;
+}
+
+body {
+  background: #ffffff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: url(img/Vector.svg);
+  background-size: 120%;
+  background-repeat: no-repeat;
+}
+
+.teks3 {
+  display: flex; /* Use flexbox to align items horizontally */
+}
+
+.teks3 h1 {
+  color: #153109;
+  font-size: 35px;
+  margin-left: 5px; /* Adjust this margin if needed */
+}
+
+.teks {
+  display: flex; /* Use flexbox to align items horizontally */
+}
+
+.teks h1 {
+  color: white;
+  font-size: 35px;
+  margin-left: 5px; /* Adjust this margin if needed */
+}
+
+.vertical-line {
+  width: 5px; /* Width of the vertical line */
+  height: 40px; /* Height of the vertical line */
+  background-color: #728D5A; /* Color of the line */
+  margin-left: 5%; /* Adjust this margin if needed */
+}
+
+.source-sans-3 {
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+section {
+  padding: 1rem 25%;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: var(--warna-putih);
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 5px 15px #4a493d31;
+  z-index: 1000;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.nav-logo img {
+  width: 200px;
+}
+
+.gp {
+  display: flex;
+  align-items: center;
+}
+
+header ul {
+  position: relative;
+  display: flex;
+  gap: 20px;
+}
+
+header ul li {
+  list-style: none;
+}
+
+header ul li a {
+  position: relative;
+  text-decoration: none;
+  font-size: 0.9em;
+  color: var(--warna-hijau1);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+header ul li a::before {
+  content: " ";
+  position: absolute;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: var(--warna-hijau2);
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: right;
+}
+
+header ul li a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+header .search {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  z-index: 10;
+  cursor: pointer;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--warna-hijau1);
+  min-width: 100px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 100%;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content li {
+  padding: 10px;
+}
+
+.dropdown-content li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+}
+
+.dropdown-content li a:hover {
+  background-color: none;
+}
+
+.show {
+  display: block;
+}
+
+.home {
+  min-height: 100vh;
+  display: relative;
+  align-items: center;
+  background: url(../img/homee\ \(1\).png) no-repeat;
+  background-size: cover;
+}
+
+.content {
+  margin-top: 200px;
+  margin-left: -300px;
+}
+
+.main {
+  margin-top: 10%;
+  min-height: 100vh;
+  background: var(--white);
+  background-repeat: no-repeat;
+  background-size: 20%;
+  background-position: center;
+}
+
+
+/* Aspirasi */
+.aspirasi {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  margin-bottom: 100px;
+  position: center;
+  margin-left: 5%; /* Menambahkan jarak kiri */
+}
+
+h1 {
+  text-align: left;
+  color: #153109;
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+h4 {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.kotak {
+  width: 500px;
+  height: 415px;
+  border: 2px dashed #153109;
+  display: flex;
+  flex-direction: column; /* Elemen dalam kolom: gambar di atas, teks di bawah */
+  justify-content: center;
+  align-items: center;
+  margin-right: 35px; /* Jarak kotak dan teks */
+  margin-top: 15px;
+  overflow: hidden; /* biar gambar ga keluar kotak */
+  background-size: cover; /* Mengatur background agar memenuhi kotak */
+  background-position: center; /* Memastikan gambar berada di tengah */
+  background-repeat: no-repeat; /* Mencegah pengulangan gambar */
+}
+
+.kotak img {
+  display: none;
+  /* Sembunyikan elemen img karena kita akan menggunakan background image */
+}
+
+.kotak h2 {
+  font-size: 25px;
+  margin: 0;/* ngehapus margin default */
+  text-align: center;/* teks rata tengah */
+}
+
+.teks-samping {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.kotak-title {
+  width: 560px;
+  height: 40px;
+  margin-top: 5px;
+  padding: 10px;
+  /* Menambahkan padding agar teks tidak menempel */
+  font-size: 16px;
+  border-radius: 5px;
+  /* Ukuran font */
+}
+
+.kotak-description {
+  width: 558px;
+  height: 100px;
+  border-radius: 10px;
+  margin-top: 5px;
+  padding: 10px;
+  /* Menambahkan padding agar teks tidak menempel */
+  font-size: 16px;
+  /* Ukuran font */
+}
+
+.button {
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: #153109;
+  color: #ffffff;
+  border: none;
+  padding: 15px 258px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* Animasi transisi */
+}
+
+.button:hover {
+  background-color: #5c7448;
+  /* Warna lebih gelap saat dihover */
+}
+
+input[type="file"] {
+  margin-top: 20px;
+  /* Jarak antara teks dan input file */
+  padding: 10px;
+  border: 1px solid #153109;
+  /* Gaya border untuk input file */
+  border-radius: 5px;
+  /* Sudut melengkung */
+  cursor: pointer;
+  /* Menunjukkan bahwa ini dapat diklik */
+  display: none;
+  /* Menyembunyikan input file */
+}
+
+.green-line {
+  border: 0;
+  height: 4px;
+  background-color: #153109;
+  width: 100%;
+  /* Adjust width to control the length */
+  margin-bottom: 35px;
+}
+
+.green-line-option {
+  margin-top: 10px;
+  height: 5px;
+  background-color: #728D5A;
+  width: 20%;
+  /* Adjust width to control the length */
+  margin-bottom: 20px;
+}
+
+.aspirasi-container {
+  display: flex;
+  align-items: flex-start;
+  /* Menyelaraskan ke atas */
+  gap: 0px;
+  /* Jarak antara kotak dan opsi */
+}
+
+.kotak {
+  flex: 1;
+  /* Mengambil ruang yang diperlukan */
+}
+
+.teks-samping {
+  flex: 1;
+}
+
+.teks2 {
+  color: #728D5A;
+  cursor: pointer;
+}
+
+/*Proses Aspirasi*/
+.proses_aspirasi {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  position: relative; /* Make the content container relative for absolute positioning inside */
+}
+
+/* Flex container for images */
+.img1 {
+  display: flex;
+  justify-content: space-around; /* Space out the images evenly */
+  align-items: center; /* Ensure images are vertically aligned */
+  position: relative; /* This allows us to position the images relative to this container */
+  z-index: 1; /* Ensure images appear above the line */
+}
+
+/* Image styling */
+.img1 img {
+  width: 6%; /* Adjust the image size */
+  margin-top: 3%; /* Add top margin */
+}
+
+/* Line styling */
+.garis {
+  position: absolute; /* Position the line absolutely relative to the .content container */
+  margin-top: -40px; /* Adjust vertical position */
+  right: 0;
+  left: 15%;
+  height: 2px;
+  width: 70%;
+  background-color: #153109; /* Line color */
+  z-index: 0; /* Make sure the line is below the images */
+}
+
+/* Text below images */
+.teks-aspirasi {
+  display: flex;
+  justify-content: space-around; /* Space out the items evenly */
+  margin-top: 20px; /* Ensure there is enough space between images and text */
+}
+
+.teks-aspirasi span {
+  font-weight: bold;
+  color: black;
+  font-family: 'Ramabhadra', sans-serif;
+  white-space: nowrap;
+  font-size: 16px;
+  width: 100%; /* Give each span a width to prevent overflow */
+}
+
+/* Detailed text under process steps */
+.teks-aspirasi2 {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px; /* Add spacing between the two text sections */
+}
+
+.teks-aspirasi2 span {
+  color: grey;
+  font-size: 14px;
+  font-family: 'Radio Canada', sans-serif;
+  white-space: nowrap;
+  line-height: 1.3;
+  width: 100%; /* Ensure each description is aligned under the corresponding image */
+  margin-bottom: 10%; /* Adjust margin as needed */
+}
+
+/* Footer */
+.footer {
+  background-color: var(--warna-hijau1);
+  padding: 40px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.section {
+  flex: 1;
+  margin: 10px;
+}
+
+.section p{
+  color: var(--warna-putih);
+  margin-bottom: 10px;
+}
+.section h4 {
+  margin-bottom: 10px;
+  color: var(--warna-terang);
+  font-size: 18px;
+}
+
+.section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.section ul li {
+  margin-bottom: 10px;
+}
+
+.section ul li a{
+  text-decoration: none;
+  color: var(--warna-putih);
+  
+}
+
+.footer-short {
+  display: flex; /* Menggunakan flexbox untuk footer pendek */
+  justify-content: space-between; /* Membagi area kiri, tengah, dan kanan */
+  padding: 20px 20px; /* Padding untuk footer pendek */
+  background-color: var(--warna-hijau2); /* Warna latar belakang footer pendek */
+  font-size: 14px; /* Ukuran font footer pendek */
+}
+
+.left, .center, .right {
+  width: 10%; /* Membagi area sama rata */
+  text-align: center; /* Rata tengah */
+}
+
+.left {
+  text-align: left; /* Rata kiri untuk bagian kiri */
+}
+
+.right {
+  text-align: right; /* Rata kanan untuk bagian kanan */
+}

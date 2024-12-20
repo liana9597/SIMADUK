@@ -1,0 +1,383 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+:root {
+    --orange: #728D5A;
+    --white: #fff;
+    --grey: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+    --black3: #153109;
+    --YoungOrange: #eea173;
+}
+
+body {
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+img {
+    margin-top: 20px;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+/* navigation */
+.navigation {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--black3);
+    border-left: 10px solid var(--black3);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.navigation.active {
+    width: 80px;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navigation ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:hover,
+.navigation ul li.hovered {
+    background-color: var(--white);
+}
+
+.navigation ul li:nth-child(1) {
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.navigation ul li:hover a,
+.navigation ul li.hovered a {
+    color: var(--orange);
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+}
+
+.navigation ul li a .icon ion-icon {
+    font-size: 1.75rem;
+}
+
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+.title {
+    font-size: 14px;
+}
+
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+/* === main ====== */
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+    background-image: url(apenih.svg);
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center;
+}
+
+.main.active {
+    width: calc(100% - 80px);
+    left: 80px;
+}
+
+.topbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.search {
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+
+.search label {
+    position: relative;
+    width: 100%;
+}
+
+.search label input {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid var(--black2);
+}
+
+.search label {
+    position: relative;
+    display: flex;
+    /* Menggunakan flexbox untuk membuat ikon dan input sejajar */
+    align-items: center;
+    /* Sejajarkan ikon secara vertikal */
+}
+
+.search label ion-icon {
+    position: absolute;
+    left: 10px;
+    /* Jarak dari sisi kiri */
+    font-size: 1.2rem;
+}
+
+
+.user {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.user img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* === Upload Berita ====== */
+.upload {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+    margin-left: 5px; /* Menambahkan jarak kiri */
+}
+
+h1 {
+    text-align: left;
+    color: #153109;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+h4 {
+    margin-top: 10px;
+    font-size: 23px;
+}
+
+.kotak {
+    width: 500px;
+    height: 400px;
+    border: 2px dashed #153109;
+    display: flex;
+    flex-direction: column; /* Elemen dalam kolom: gambar di atas, teks di bawah */
+    justify-content: center;
+    align-items: center;
+    margin-right: 35px; /* Jarak kotak dan teks */
+    margin-top: 15px;
+    overflow: hidden; /* biar gambar ga keluar kotak */
+    background-size: cover; /* Mengatur background agar memenuhi kotak */
+    background-position: center; /* Memastikan gambar berada di tengah */
+    background-repeat: no-repeat; /* Mencegah pengulangan gambar */
+}
+
+.kotak img {
+    display: none;
+    /* Sembunyikan elemen img karena kita akan menggunakan background image */
+}
+
+.kotak h2 {
+    font-size: 25px;
+    margin: 0;/* ngehapus margin default */
+    text-align: center;/* teks rata tengah */
+}
+
+.teks-samping {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.kotak-title {
+    width: 560px;
+    height: 50px;
+    margin-top: 5px;
+    padding: 10px;
+    /* Menambahkan padding agar teks tidak menempel */
+    font-size: 16px;
+    /* Ukuran font */
+}
+
+
+.kotak-description {
+    width: 558px;
+    height: 200px;
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 10px;
+    /* Menambahkan padding agar teks tidak menempel */
+    font-size: 16px;
+    /* Ukuran font */
+}
+
+.button {
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #153109;
+    color: #ffffff;
+    border: none;
+    padding: 15px 258px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Animasi transisi */
+}
+
+.button:hover {
+    background-color: #5c7448;
+    /* Warna lebih gelap saat dihover */
+}
+
+input[type="file"] {
+    margin-top: 20px;
+    /* Jarak antara teks dan input file */
+    padding: 10px;
+    border: 1px solid #153109;
+    /* Gaya border untuk input file */
+    border-radius: 5px;
+    /* Sudut melengkung */
+    cursor: pointer;
+    /* Menunjukkan bahwa ini dapat diklik */
+    display: none;
+    /* Menyembunyikan input file */
+}
+
+.green-line {
+    border: 0;
+    height: 4px;
+    background-color: #153109;
+    width: 100%;
+    /* Adjust width to control the length */
+    margin-bottom: 35px;
+}
+
+.green-line-option {
+    margin-top: 10px;
+    height: 5px;
+    background-color: #728D5A;
+    width: 20%;
+    /* Adjust width to control the length */
+    margin-bottom: 20px;
+}
+
+.upload-container {
+    display: flex;
+    align-items: flex-start;
+    /* Menyelaraskan ke atas */
+    gap: 0px;
+    /* Jarak antara kotak dan opsi */
+}
+
+.kotak {
+    flex: 1;
+    /* Mengambil ruang yang diperlukan */
+}
+
+.teks-samping {
+    flex: 1;
+}
+
+.teks2 {
+    color: #728D5A;
+    cursor: pointer;
+}
