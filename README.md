@@ -15,6 +15,20 @@ SIMADUK is a village information system website built using PHP Native and MySQL
 - CSS
 - JavaScript
 
+## Screenshots
+
+### Home Page
+![Home](screenshots/home.png)
+
+### Main Features
+![Features](screenshots/features.png)
+
+### Admin Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Admin Login Page
+![Login](screenshots/login.png)
+
 ## Developer
 - Liana Syifa Fauzia (liana9597)
 - Ririn Dwi Ariyanti (ririndaaa21)
