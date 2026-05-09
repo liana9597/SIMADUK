@@ -635,12 +635,29 @@ header .search {
 }
 
 .read-more {
-  display: inline-block;
-  padding: 5px 0px;
-  color: var(--warna-hijau1); /* Warna teks tombol */
-  text-decoration: underline; /* Menghilangkan garis bawah */
+  position: relative;
+  text-decoration: none;
+  font-size: 0.9em;
+  color: var(--warna-hijau1);
   margin-top: 10px;
-  font-size: 13px;
+  display: inline-block;
+}
+
+.read-more::before {
+  content: " ";
+  position: absolute;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: var(--warna-hijau2);
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: right;
+}
+
+.read-more:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .span {
@@ -655,32 +672,72 @@ header .search {
 
 .news-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 kolom */
-  gap: 30px; /* Jarak antar card */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: start; /* biar tiap card ga stretch ikutin yang paling tinggi */
 }
 
 .news-card {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* Sembunyikan gambar yang keluar dari card */
-  position: relative; /* Untuk menambahkan garis oranye */
-  transition: box-shadow 0.3s ease transform 0.3s ease; /* Transisi box shadow */
-  border-bottom: 3px solid transparent; /* Garis bawah transparan */
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border-bottom: 3px solid transparent;
+  display: flex;
+  flex-direction: column; /* konten tersusun vertikal */
 }
 
 .news-card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Box shadow lebih kuat saat dihover */
-  border-bottom: 5px solid var(--warna-hijau1); /* Garis bawah oranye saat dihover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-bottom: 5px solid var(--warna-hijau1);
   transition: 0.2s ease-in-out;
 }
 
+
+/* PENTING: paksa semua gambar sama tingginya */
 .news-card img {
   width: 100%;
-  height: 200px; /* Tinggi gambar */
-  object-fit: cover; /* Gambar memenuhi area */
+  height: 200px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background-color: #f0f0f0;
 }
 
+.news-card .news-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.news-card .news-content h3 {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  line-height: 1.4;
+  /* batasi judul max 2 baris */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.news-card .news-content p {
+  line-height: 1.6;
+  margin-bottom: 10px;
+  font-size: 0.875rem;
+  color: #555;
+  flex: 1; /* dorong read-more ke bawah */
+}
+
+.news-card .post-date {
+  color: #888;
+  font-size: 0.85em;
+  display: block;
+  margin-bottom: 8px;
+}
 .news-content {
   padding: 15px;
 }
@@ -700,6 +757,7 @@ header .search {
 }
 
 /* Garis oranye saat dihover */
+/* ✅ BENAR */
 .news-card::before {
   content: "";
   position: absolute;
@@ -707,13 +765,15 @@ header .search {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0; /* Sembunyikan garis oranye secara default */
-  transition: opacity 0.3s ease; /* Transisi opacity */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* ← INI yang penting! */
 }
 
 .news-card:hover::before {
   opacity: 1; /* Tampilkan garis oranye saat dihover */
 }
+
 
 .swiper {
   width: 100%;

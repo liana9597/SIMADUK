@@ -10,64 +10,56 @@
 
 <body>
     <!--header-->
-    <header>
-        <a href="#" class="nav-logo"><img src="img/logoo.svg" alt="" class="logo" /></a>
-        <div class="gp">
-            <ul>
-                <li class="dropdown">
-                    <ul class="dropdown-content">
-                        <li><a href="/halaman_utama/index.php">Beranda</a></li>
-                        <li><a href="#">Tentang Desa</a></li>
-                        <li><a href="#">Struktur Desa</a></li>
-                        <li><a href="#">Berita Desa</a></li>
-                        <li><a href="#">Tata Letak Desa</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </header>
-    <!--Form Aspirasi-->
-    <div class="main">
-        <div class="teks">
-            <div class="vertical-line"></div>
-            <h1>Berikan Aspirasi</h1>
-        </div>
-        <div class="aspirasi">
-            <div class="aspirasi-container">
-                <form action="proses_aspirasi.php" method="POST" enctype="multipart/form-data">
-                    <div class="kotak" id="uploadBox" onclick="document.getElementById('fileInput').click()">
-                        <h2>
-                            <span class="teks1">Upload your</span>
-                            <span class="teks2" id="uploadText">file</span>
-                        </h2>
-                        <input type="file" id="fileInput" name="file" accept="image/*" style="display: none;" />
-                    </div>
-
-                    <div class="teks-samping">
-                        <h3>Options</h3>
-                        <hr class="green-line-option">
-
-                        <div class="kotak-samping">
-                            <h4>Nama Lengkap*</h4>
-                            <input type="text" name="nama_lengkap" class="kotak-title" required>
-                        </div>
-                        <div class="kotak-samping">
-                            <h4>No NIK*</h4>
-                            <input type="text" name="nik" class="kotak-title" required>
-                        </div>
-                        <div class="kotak-samping">
-                            <h4>Judul Aspirasi*</h4>
-                            <input type="text" name="judul_aspirasi" class="kotak-title" required>
-                        </div>
-                        <div class="kotak-samping">
-                            <h4>Isi Aspirasi*</h4>
-                            <textarea name="isi_aspirasi" class="kotak-description" required></textarea>
-                        </div>
-                        <button type="submit" name="submit" class="button">Kirim</button>
-                </form>
-            </div>
-        </div>
+<header>
+    <a href="../halaman_utama/index.php" class="nav-logo"><img src="img/logoo.svg" alt="" class="logo" /></a>
+    <div class="gp">
+        <a href="../halaman_utama/index.php" class="btn-back">← Kembali</a>
     </div>
+</header>
+    <!--Form Aspirasi-->
+<div class="main">
+    <div class="teks">
+        <div class="vertical-line"></div>
+        <h1>Berikan Aspirasi</h1>
+    </div>
+    <div class="aspirasi">
+        <form action="proses_aspirasi.php" method="POST" enctype="multipart/form-data">
+            <div class="aspirasi-container">
+                <!-- Kotak Upload Kiri -->
+                <div class="kotak" id="uploadBox" onclick="document.getElementById('fileInput').click()">
+                    <h2>
+                        <span class="teks1">Upload your</span>
+                        <span class="teks2" id="uploadText">file</span>
+                    </h2>
+                    <input type="file" id="fileInput" name="file" accept="image/*" style="display: none;" />
+                </div>
+
+                <!-- Form Input Kanan -->
+                <div class="teks-samping">
+                    <h3>Options</h3>
+                    <hr class="green-line-option">
+                    <div class="kotak-samping">
+                        <h4>Nama Lengkap*</h4>
+                        <input type="text" name="nama_lengkap" class="kotak-title" required>
+                    </div>
+                    <div class="kotak-samping">
+                        <h4>No NIK*</h4>
+                        <input type="text" name="nik" class="kotak-title" required>
+                    </div>
+                    <div class="kotak-samping">
+                        <h4>Judul Aspirasi*</h4>
+                        <input type="text" name="judul_aspirasi" class="kotak-title" required>
+                    </div>
+                    <div class="kotak-samping">
+                        <h4>Isi Aspirasi*</h4>
+                        <textarea name="isi_aspirasi" class="kotak-description" required></textarea>
+                    </div>
+                    <button type="submit" name="submit" class="button">Kirim</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
     <!--Proses Aspirasi-->
     <div class="teks3">
         <div class="vertical-line"></div>

@@ -1,3 +1,11 @@
+<!--halaman utama-->
+<?php
+function potongKata($teks, $maxKata = 10) {
+    $kata = explode(' ', $teks);
+    if (count($kata) <= $maxKata) return $teks;
+    return implode(' ', array_slice($kata, 0, $maxKata)) . '...';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,55 +24,7 @@
       rel="stylesheet"
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-      <style>
-        /* Grid Layout untuk berita */
-        .news-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px; /* Jarak antar item */
-            margin: 20px 0;
-        }
 
-        .news-card {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .news-card img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-
-        .news-card h3 {
-            font-size: 18px;
-            margin: 10px 0;
-            color: #333;
-        }
-
-        .news-card p {
-            font-size: 14px;
-            color: #666;
-        }
-
-        .news-card .post-date {
-            font-size: 12px;
-            color: #aaa;
-        }
-
-        .news-card:hover {
-            transform: scale(1.03);
-        }
-    </style>
   </head>
   <body>
     <!--header-->
@@ -211,124 +171,74 @@
     <!--profil-->
 
     <!--berita-->
-    <?php
-$servername = "localhost"; // Ganti dengan host database Anda
-$username = "root"; // Ganti dengan username database Anda
-$password = ""; // Ganti dengan password database Anda
-$dbname = "simaduk_migrasi"; // Ganti dengan nama database Anda
-
-// Koneksi ke database
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Periksa koneksi
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Ambil berita terbaru
-$sql = "SELECT title, description, file_path, created_at FROM berita ORDER BY created_at DESC LIMIT 2"; // Ambil dua berita terbaru
-$result = $conn->query($sql);
-?>
-
-<?php
-$servername = "localhost"; // Ganti dengan host database Anda
-$username = "root"; // Ganti dengan username database Anda
-$password = ""; // Ganti dengan password database Anda
-$dbname = "simaduk_migrasi"; // Ganti dengan nama database Anda
-
-// Koneksi ke database
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Periksa koneksi
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Ambil berita terbaru
-$sql = "SELECT title, description, file_path, created_at FROM berita ORDER BY created_at DESC LIMIT 2"; // Ambil dua berita terbaru
-$result = $conn->query($sql);
-?>
 
 <section class="news-section">
-      <div class="code"data-aos="fade-right" data-aos-duration="1000" id="berita">
-        <a href="#"><h1>Berita terbaru</h1></a>
-      </div>
-      <div class="news-item" data-aos="fade-up"
-      data-aos-duration="2000">
-        <div class="news-image">
-          <img src="img/tugu2.jpg" alt="" />
-        </div>
-        <div class="news-content">
-          <h2>Berita Desa</h2>
-          <span class="span">21 Januari 2024</span>
-          <p>
-          Monument ini dibangun pada tahun 1950 yang dimaksudkan untuk memperingati peristiwa Rengasdengklok...
-          </p>
-          <a href="#" class="read-more">Baca Selengkapnya</a>
-        </div>
-      </div>
+  <div class="code" data-aos="fade-right" data-aos-duration="1000" id="berita">
+    <a href="#"><h1>Berita Terbaru</h1></a>
+  </div>
 
-      <div class="news-item">
-        <div class="news-image">
-          <img src="img/tugu.jpeg" alt="Foto Berita 2" />
-        </div>
-        <div class="news-content">
-          <h2>Berita Desa</h2>
-          <span class="span">21 Januari 2024</span>
-          <p>
-          Tugu Proklamasi adalah tugu peringatan proklamasi kemerdekaan Republik Indonesia yang berdiri di kompleks Taman Proklamasi di Jalan Proklamasi, ...
-          </p>
-          <a href="../berita/index.php" class="read-more">Baca Selengkapnya</a>
-        </div>
-      </div>
-    </section>
+  <?php
+  $conn = new mysqli("localhost", "root", "", "simaduk_migrasi");
+  if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
+
+  $result = $conn->query("SELECT * FROM berita ORDER BY created_at DESC LIMIT 2 OFFSET 0");
+
+  if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+      echo '
+<div class="news-item" data-aos="fade-up" data-aos-duration="2000">
+  <div class="news-image">
+    <img src="../upload/' . htmlspecialchars($row['file_path']) . '" alt="Foto Berita" />
+  </div>
+  <div class="news-content">
+    <h2>' . htmlspecialchars($row['title']) . '</h2>
+    <span class="span">' . date("d F Y", strtotime($row['created_at'])) . '</span>
+    <p>' . potongKata(htmlspecialchars($row['description']), 10) . '</p>
+   <a href="../berita/detail_berita.php?id=' . $row['id'] . '&from=halaman_utama" class="read-more">Baca Selengkapnya</a>
+  </div>
+</div>';
+    }
+  } else {
+    echo "<p>Belum ada berita.</p>";
+  }
+  $conn->close();
+  ?>
+</section>
 
 
 
     <!--berita-->
 
-    <!--aspirasi-->
-    <section class="news-section">
-        <h1>Berita Desa</h1>
-        <?php
-        // Koneksi ke database
-        $servername = "localhost"; // Ganti dengan host database Anda
-        $username = "root"; // Ganti dengan username database Anda
-        $password = ""; // Ganti dengan password database Anda
-        $dbname = "simaduk_migrasi"; // Ganti dengan nama database Anda
+<section class="news-section">
+  <div class="code" data-aos="fade-right" data-aos-duration="1000">
+    <a href="../berita/index.php"><h1>Berita Desa</h1></a>
+  </div>
+  <div class="news-container" data-aos="fade-up" data-aos-duration="2000">
+    <?php
+    $conn = new mysqli("localhost", "root", "", "simaduk_migrasi");
+    if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
 
-        $conn = new mysqli($servername, $username, $password, $dbname);
+    $result = $conn->query("SELECT * FROM berita ORDER BY created_at DESC LIMIT 8 OFFSET 2");
 
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-
-        // Query untuk mengambil berita terbaru
-        $sql = "SELECT * FROM berita ORDER BY created_at DESC LIMIT 5"; // Ambil 5 berita terbaru
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            echo '<div class="news-container">'; // Tambahkan container grid
-            while ($row = $result->fetch_assoc()) {
-                // Tampilkan berita dengan format yang sudah ada
-                echo '<div class="news-card">';
-                echo '<img src="../upload/' . $row['file_path'] . '" alt="Upload Photo" />';
-                echo '<div class="news-content">';
-                echo '<h3>' . $row['title'] . '</h3>';
-                echo '<p>' . $row['description'] . '</p>';
-                echo '<span class="post-date">' . $row['created_at'] . '</span>';
-                echo '</div>';
-                echo '</div>';
-            }
-            echo '</div>'; // Tutup container grid
-        } else {
-            echo "No news found.";
-        }
-
-        $conn->close();
-        ?>
-    </section>
-    <!--aspirasi-->
+    if ($result->num_rows > 0) {
+      while ($row = $result->fetch_assoc()) {
+echo '<div class="news-card">';
+echo '<img src="../upload/' . htmlspecialchars($row['file_path']) . '" />';
+echo '<div class="news-content">';
+echo '<h3>' . htmlspecialchars($row['title']) . '</h3>';
+echo '<p>' . potongKata(htmlspecialchars($row['description']), 10) . '</p>';
+echo '<span class="post-date">' . date("d F Y", strtotime($row['created_at'])) . '</span>';
+echo '<a href="../berita/detail_berita.php?id=' . $row['id'] . '&from=halaman_utama" class="read-more">Baca Selengkapnya</a>';
+echo '</div>';
+echo '</div>';
+      }
+    } else {
+      echo "<p>Belum ada berita lainnya.</p>";
+    }
+    $conn->close();
+    ?>
+  </div>
+</section>
 
     <!--organisasi-->
     <section class="swiper mySwiper">

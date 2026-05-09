@@ -1,3 +1,11 @@
+<!--berita desa-->
+<?php
+function potongKata($teks, $maxKata = 10) {
+    $kata = explode(' ', $teks);
+    if (count($kata) <= $maxKata) return $teks;
+    return implode(' ', array_slice($kata, 0, $maxKata)) . '...';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,10 +18,10 @@
 
 <body>
 
-  <header>
-    <header>
-      <a href="#" class="nav-logo"><img src="img/logoo.svg" alt="" class="logo" /></a>
-      <div class="gp">
+<header>
+  <a href="../halaman_utama/index.php" class="nav-logo"><img src="img/logoo.svg" alt="" class="logo" /></a>
+  <div class="gp">
+    <a href="../halaman_utama/index.php" class="btn-back">← Kembali</a>
         <ul>
           <li class="dropdown">
             
@@ -47,16 +55,11 @@
 
   <!-- Main Section -->
   <div class="container">
-    <!-- Kotak Pencarian -->
-    <div class="search-bar">
-      <input type="text" placeholder="Pencarian Berita">
-      <button><i class="fa fa-search"></i></button>
-    </div>
 
     <!-- Row: Berita dan Catatan Aspirasi -->
     <div class="content-row">
       <!-- Bagian Berita -->
-      <section class="news-section">
+      <section class="news-section" id="berita">
         <div class="code">
           <a href="#">
             <h1>Berita</h1>
@@ -77,21 +80,21 @@
           }
 
           // Query untuk mengambil berita terbaru
-          $sql = "SELECT * FROM berita ORDER BY created_at DESC LIMIT 5"; // Ambil 5 berita terbaru
+          $sql = "SELECT * FROM berita ORDER BY created_at DESC LIMIT 100 OFFSET 8"; // Ambil 5 berita terbaru
           $result = $conn->query($sql);
 
           if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-              // Tampilkan berita dengan format yang sudah ada
-              echo '<div class="news-card">';
-              echo '<img src="../upload/' . $row['file_path'] . '" alt="Upload Photo" />';
-              echo '<div class="news-content">';
-              echo '<h3>' . $row['title'] . '</h3>';
-              echo '<p>' . $row['description'] . '</p>';
-              echo '<span class="post-date">' . $row['created_at'] . '</span>';
-              echo '</div>';
-              echo '</div>';
-            }
+echo '<div class="news-card">';
+echo '<img src="../upload/' . htmlspecialchars($row['file_path']) . '" alt="Upload Photo" />';
+echo '<div class="news-content">';
+echo '<h3>' . htmlspecialchars($row['title']) . '</h3>';
+echo '<p>' . potongKata(htmlspecialchars($row['description']), 10) . '</p>';
+echo '<span class="post-date">' . date("d F Y", strtotime($row['created_at'])) . '</span>';
+echo '<a href="detail_berita.php?id=' . $row['id'] . '&from=berita" class="read-more">Baca Selengkapnya</a>';
+echo '</div>';
+echo '</div>';
+}
           } else {
             echo "No news found.";
           }
@@ -126,12 +129,14 @@
             while ($row = $result->fetch_assoc()) {
               // Menampilkan setiap aspirasi yang sudah ada
               echo '<div class="aspirasi-item">';
-              echo '<img src="../aspirasi/' . $row['file_path'] . '" alt="Aspirasi Photo" />'; // Menampilkan foto (jika ada)
-              echo '<p><strong>Nama: </strong>' . $row['nama_lengkap'] . '</p>';
-              echo '<p><strong>NIK: </strong>' . $row['nik'] . '</p>';
-              echo '<p><strong>Judul Aspirasi: </strong>' . $row['judul_aspirasi'] . '</p>';
-              echo '<p><strong>Isi Aspirasi: </strong>' . $row['isi_aspirasi'] . '</p>';
-              echo '</div>';
+echo '<img src="../aspirasi/' . $row['file_path'] . '" alt="Foto Aspirasi" />';
+echo '<div class="aspirasi-info">';
+echo '<p><strong>Nama:</strong> ' . $row['nama_lengkap'] . '</p>';
+echo '<p><strong>NIK:</strong> ' . $row['nik'] . '</p>';
+echo '<p><strong>Judul:</strong> ' . $row['judul_aspirasi'] . '</p>';
+echo '<p><strong>Isi:</strong> ' . potongKata($row['isi_aspirasi'], 8) . '</p>';
+echo '</div>';
+echo '</div>';
             }
           } else {
             echo "Tidak ada aspirasi yang ditemukan.";
@@ -199,5 +204,7 @@
     </div>
   </div>
 
+
+  
 </body>
 </html>

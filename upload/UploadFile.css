@@ -381,3 +381,138 @@ input[type="file"] {
     color: #728D5A;
     cursor: pointer;
 }
+
+/* ── Tombol "Lihat Semua" / link underline hover ── */
+.btn-lihat {
+  position: relative;
+  text-decoration: none;
+  font-size: 0.9em;
+  color: var(--black3);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.btn-lihat::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: right;
+}
+
+.btn-lihat:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ── Tombol "Upload Berita" ── */
+.tambah-button {
+  position: relative;
+  text-decoration: none;
+  font-size: 0.9em;
+  color: var(--white);
+  background-color: var(--black3);
+  padding: 10px 20px;
+  border-radius: 8px;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.tambah-button:hover {
+  background-color: var(--orange);
+}
+
+/* ── Header section (judul + tombol sejajar) ── */
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+/* ── Tabel berita ── */
+.berita-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.berita-table th {
+  background-color: var(--black3);
+  color: var(--white);
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.berita-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+
+.berita-table tr:hover td {
+  background-color: #f9f9f9;
+}
+
+.berita-table img {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* ── Tombol Edit & Hapus ── */
+.aksi-container {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn-edit {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+  white-space: nowrap;
+  background: #2196F3;
+  color: white;
+  transition: background 0.2s;
+}
+
+.btn-edit:hover { background: #1976D2; }
+
+.btn-hapus {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+  white-space: nowrap;
+  background: #f44336;
+  color: white;
+  transition: background 0.2s;
+}
+
+.btn-hapus:hover { background: #c62828; }
+
+/* ── Notifikasi sukses ── */
+.notif-success {
+  background: #d4edda;
+  color: #155724;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}

@@ -26,25 +26,20 @@
                         <span class="title">Home</span>
                     </a>
                 </li>
+                
                 <li>
-                    <a href="../upload/UploadFile.php">
-                        <span class="icon"><ion-icon name="add-circle-outline"></ion-icon></span>
-                        <span class="title">Upload Berita</span>
-                    </a>
-                </li>
+  <a href="../upload/berita_list.php">
+    <span class="icon"><ion-icon name="newspaper-outline"></ion-icon></span>
+    <span class="title">Kelola Berita</span>
+  </a>
+</li>
                <!-- <li>
                     <a href="#">
                         <span class="icon"><ion-icon name="reader-outline"></ion-icon></span>
                         <span class="title">Pesan Aspirasi</span>
                     </a>
                 </li>-->
-                <li>
-                    <a href="../migrasi/formMigrasi.php">
-                        <span class="icon"><ion-icon name="documents-outline"></ion-icon></span>
-                        <span class="title">Data Migrasi</span>
 
-                    </a>
-                </li>
                 <li>
                     <a href="../migrasi/rekapMigrasi.php">
                         <span class="icon"><ion-icon name="folder-outline"></ion-icon></span>

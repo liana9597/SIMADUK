@@ -14,7 +14,31 @@
   --black3: #153109;
   --YoungOrange: #eea173;
 }
+.btn-lihat {
+  position: relative;
+  text-decoration: none;
+  font-size: 0.9em;
+  color: var(--warna-hijau1);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
 
+.btn-lihat::before {
+  content: " ";
+  position: absolute;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: var(--warna-hijau2);
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: right;
+}
+
+.btn-lihat:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
 body {
   height: 100vh;
   overflow-x: hidden;
