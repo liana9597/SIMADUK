@@ -45,15 +45,6 @@ function potongKata($teks, $maxKata = 10) {
           </li>
           <li><a href="../login/form_login.html">Login</a></li>
         </ul>
-        <div class="search">
-          <span class="icon">
-            <ion-icon name="search-outline" class="searchBtn"></ion-icon>
-            <ion-icon name="close-outline" class="closeBtn"></ion-icon>
-          </span>
-        </div>
-        <div class="searchBox">
-          <input type="text" placeholder="cari disini.." />
-        </div>
       </div>
     </header>
     <!--header-->
@@ -440,23 +431,6 @@ echo '</div>';
     ></script>
 
     <script>
-      let searchBtn = document.querySelector(".searchBtn");
-      let closeBtn = document.querySelector(".closeBtn");
-      let searchBox = document.querySelector(".searchBox");
-
-      searchBtn.onclick = function () {
-        searchBox.classList.add("active");
-        closeBtn.classList.add("active");
-        searchBtn.classList.add("active");
-      };
-      closeBtn.onclick = function () {
-        searchBox.classList.remove("active");
-        closeBtn.classList.remove("active");
-        searchBtn.classList.remove("active");
-      };
-    </script>
-
-    <script>
       function toggleDropdown(element) {
         element.classList.toggle("show");
       }
@@ -491,5 +465,7 @@ echo '</div>';
     </script>
 
     <!--endscript js-->
+
+    
   </body>
 </html>
