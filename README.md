@@ -2,10 +2,6 @@
 
 Sistem Informasi Migrasi dan Aspirasi Penduduk berbasis web yang dikembangkan menggunakan Native PHP untuk membantu pengelolaan data penduduk, berita desa, dan layanan aspirasi masyarakat.
 
-## Short Description
-
-Web-based village information system built using Native PHP for managing resident migration data, village news, and community aspirations.
-
 ---
 
 # Overview
