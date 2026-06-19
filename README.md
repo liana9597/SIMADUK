@@ -106,14 +106,6 @@ Although the system still uses manual data input and simple architecture, this p
 
 ![Public Homepage](screenshots/public-homepage.png)
 
-## Main Menu
-
-![Main Menu](screenshots/menu.png)
-
-## Location
-
-![Location](screenshots/location.png)
-
 ---
 
 # Key Highlights
