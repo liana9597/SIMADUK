@@ -232,94 +232,76 @@ echo '</div>';
 </section>
 
     <!--organisasi-->
-    <section class="swiper mySwiper">
-      <div class="judul" data-aos="fade-up"
-      data-aos-duration="2000" id="strukturdesa">
-        <a href="#"><h1>Struktur Organisasi</h1></a>
+<section class="organisasi-section" id="strukturdesa">
+  <div class="judul" data-aos="fade-up" data-aos-duration="2000">
+    <a href="#"><h1>Struktur Organisasi</h1></a>
+  </div>
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+      <div class="kard swiper-slide">
+        <div class="kard_img"><img src="img/user.jpg" alt="" /></div>
+        <div class="kard_content">
+          <span class="kard_name">H. SALWANI</span>
+          <p class="kard_text">Kepala Desa</p>
+        </div>
       </div>
-      <div class="swiper-wrapper">
-        <div class="kard swiper-slide">
-          <div class="kard_img">
-            <img src="img/user.jpg" alt="" />
-          </div>
 
-          <div class="kard_content">
-            <span class="kard_name">H. SALWANI</span>
-            <p class="kard_text">Kepala Desa</p>
-            <!--<button class="kard_btn">Lihat</button>-->
-          </div>
+      <div class="kard swiper-slide">
+        <div class="kard_img"><img src="img/user.jpg" alt="" /></div>
+        <div class="kard_content">
+          <span class="kard_name">GUNAWAN</span>
+          <p class="kard_text">Sekertaris Desa</p>
         </div>
+      </div>
 
-        <div class="kard swiper-slide">
-          <div class="kard_img">
-            <img src="img/user.jpg" alt="" />
-          </div>
-
-          <div class="kard_content">
-            <span class="kard_name">GUNAWAN</span>
-            <p class="kard_text">Sekertaris Desa</p>
-            <!--<button class="kard_btn">Lihat</button>-->
-          </div>
+      <div class="kard swiper-slide">
+        <div class="kard_img"><img src="img/user.jpg" alt="" /></div>
+        <div class="kard_content">
+          <span class="kard_name">MUHAMMAD ISMAIL</span>
+          <p class="kard_text">Kaur Umum & Perencanaan</p>
         </div>
+      </div>
 
-        <div class="kard swiper-slide">
-          <div class="kard_img">
-            <img src="img/user.jpg" alt="" />
-          </div>
-
-          <div class="kard_content">
-            <!--<span class="kard_title">Struktur ogra</span>-->
-            <span class="kard_name">MUHAMMAD ISMAIL</span>
-            <p class="kard_text">Kaur Umum & Perencanaan</p>
-          </div>
+      <div class="kard swiper-slide">
+        <div class="kard_img"><img src="img/user.jpg" alt="" /></div>
+        <div class="kard_content">
+          <span class="kard_name">LIA ANGGRAWATI</span>
+          <p class="kard_text">Kaur Keuangan</p>
         </div>
+      </div>
 
-        <div class="kard swiper-slide">
-          <div class="kard_img">
-            <img src="img/user.jpg" alt="" />
-          </div>
-
-          <div class="kard_content">
-            <span class="kard_name">LIA ANGGRAWATI</span>
-            <p class="kard_text">Kaur Keuangan</p>
-          </div>
+      <div class="kard swiper-slide">
+        <div class="kard_img"><img src="img/user.jpg" alt="" /></div>
+        <div class="kard_content">
+          <span class="kard_name">ANWAR PERMANA</span>
+          <p class="kard_text">Kasi Pelayanan</p>
         </div>
+      </div>
 
-        <div class="kard swiper-slide">
-          <div class="kard_img">
-            <img src="img/user.jpg" alt="" />
-          </div>
-
-          <div class="kard_content">
-            <span class="kard_name">ANWAR PERMANA</span>
-            <p class="kard_text">Kasi Pelayanan</p>
-          </div>
+      <div class="kard swiper-slide">
+        <div class="kard_img"><img src="img/user.jpg" alt="" /></div>
+        <div class="kard_content">
+          <span class="kard_name">DEVI NOVIYANTI</span>
+          <p class="kard_text">Kasi Kesejahteraan</p>
         </div>
+      </div>
 
-        <div class="kard swiper-slide">
-          <div class="kard_img">
-            <img src="img/user.jpg" alt="" />
-          </div>
-
-          <div class="kard_content">
-            <span class="kard_name">DEVI NOVIYANTI</span>
-            <p class="kard_text">Kasi Kesejahteraan</p>
-          </div>
+      <div class="kard swiper-slide">
+        <div class="kard_img"><img src="img/user.jpg" alt="" /></div>
+        <div class="kard_content">
+          <span class="kard_name">PAHRUDIN</span>
+          <p class="kard_text">Kasi Pemerintahan</p>
         </div>
+      </div>
 
-        <div class="kard swiper-slide">
-          <div class="kard_img">
-            <img src="img/user.jpg" alt="" />
-          </div>
+    </div><!-- ✅ tutup swiper-wrapper -->
+    <div class="swiper-pagination"></div>
+  </div><!-- ✅ tutup swiper -->
 
-          <div class="kard_content">
-            <span class="kard_name">PAHRUDIN</span>
-            <p class="kard_text">Kasi Pemerintahan</p>
-          </div>
-        </div>
-
-    </section>
-    <!---organisasi-->
+</section>
+<!--organisasi-->
 
     <!---maps-->
     <div class="maps">

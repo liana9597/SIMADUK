@@ -543,6 +543,28 @@ header .search {
   height: auto;
 }
 
+/* Swiper section lebih lebar */
+.organisasi-section {
+  width: 100%;
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+.mySwiper {
+  width: 100%;
+  padding: 20px 0 50px 0 !important;
+}
+
+.mySwiper .swiper-wrapper {
+  align-items: center;
+}
+
+/* Card ukurannya */
+.kard {
+  width: 280px !important;
+  /* atau sesuaikan ukuran card yang kamu mau */
+}
+
 .content-section {
   background-color: var(--warna-terang2); /* Warna background */
   padding: 20px;
