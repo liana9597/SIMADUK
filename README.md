@@ -1,128 +1,81 @@
-# SIMADUK
-
-Sistem Informasi Migrasi dan Aspirasi Penduduk berbasis web yang dikembangkan menggunakan Native PHP untuk membantu pengelolaan data penduduk, berita desa, dan layanan aspirasi masyarakat.
-
----
-
-# Overview
-
-SIMADUK (Sistem Informasi Migrasi dan Aspirasi Penduduk) adalah sistem informasi berbasis web yang dibuat untuk membantu proses pengelolaan data penduduk dan komunikasi masyarakat dengan pihak desa.
-
-Sistem ini memiliki dua jenis pengguna utama:
-
-* Admin / Staff Desa
-* Masyarakat Umum
-
-Admin memiliki akses untuk mengelola data dan informasi desa, sementara masyarakat dapat melihat informasi desa serta mengirimkan aspirasi secara online.
+# 🌐 Language Options:
+**English** | [Bahasa Indonesia](README-id.md)
 
 ---
 
-# Main Features
+# 🏛️ SIMADUK - Population Migration and Aspiration Information System
 
-## Authentication System
-
-* Login system for admin access
-* Restricted access for protected pages
-* Public and admin page separation
-
-## Village News Management
-
-Admin dapat:
-
-* Menambahkan berita desa
-* Mengedit berita
-* Menghapus berita
-* Melihat riwayat berita
-
-Berita yang dipublikasikan akan tampil pada halaman utama website.
-
-## Resident Data Management
-
-Admin dapat:
-
-* Menambahkan data penduduk
-* Mengedit data penduduk
-* Menghapus data penduduk
-
-Semua data dikelola secara manual melalui dashboard admin.
-
-## Migration Data Management
-
-Terdapat fitur pengelolaan data migrasi penduduk yang hanya dapat diakses oleh admin.
-
-## Community Aspiration Service
-
-Masyarakat dapat mengirimkan aspirasi atau masukan melalui fitur layanan aspirasi yang tersedia pada website.
-
-## Public Information Page
-
-Halaman utama website menampilkan:
-
-* Berita terbaru desa
-* Aspirasi masyarakat
-* Struktur organisasi desa
-* Lokasi desa
-* Informasi umum lainnya
+**SIMADUK** is a web-based information platform built with **Native PHP** to streamline local resident records, track migration data, broadcast official village news, and serve as an open online portal for community feedback.
 
 ---
 
-# Technologies Used
+## 🎯 System Overview
 
-* Native PHP
-* MySQL
-* HTML
-* CSS
-* JavaScript
+The application features a secure role-based accessibility structure separating two main target users:
+* **Admin / Village Officials:** Full access to the backend management dashboard to audit population metrics and manage publications.
+* **General Public:** Open access to the main landing page to check real-time village announcements and submit feedback digitally.
 
 ---
 
-# Project Notes
+## ✨ Main Features
 
-This project was developed during the early learning phase of web development using Native PHP.
+### 🔐 Authentication System
+* Secure session-based architecture preventing unauthorized URL access to backoffice panels.
+* Clean separation between internal control systems and general public viewports.
 
-The system focuses on understanding:
+### 📰 Village News Management
+* Full CRUD (Create, Read, Update, Delete) content management system tailored for system administrators.
+* Automatic frontpage sync rendering newly posted publications onto the homepage banner.
 
-* CRUD operations
-* Authentication basics
-* Data management flow
-* Role separation between public users and admin
-* Basic web application structure
+### 👥 Resident Data Management
+* Centralized master records panel allowing staff to manually register, inspect, modify, or archive citizen metadata.
 
-Although the system still uses manual data input and simple architecture, this project became an important foundation in learning backend and web application development.
+### 🔄 Migration Data Management
+* Dedicated data auditing sub-feature enabling seamless documentation of resident relocations (inbound and outbound migration tracking).
+
+### 💬 Community Aspiration Service
+* An open communication interface allowing citizens to log active complaints, feedback, or suggestions directly into the administrative queue.
+
+### 🌐 Public Information Page
+* Interactive, easy-to-read layout showcasing the latest localized news feed, community voice logs, organizational hierarchy chart, and location maps.
 
 ---
 
-# Screenshots
+## 🛠️ Technologies Used
 
-## Login Page
+* **Language:** Native PHP
+* **Database:** MySQL
+* **Markup & Styling:** HTML5, CSS3
+* **Scripting:** JavaScript
 
+---
+
+## 📄 Project Development Notes
+
+This repository was crafted during the foundational milestones of web programming studies to master core web architecture:
+* Implementing underlying query actions (CRUD) natively without abstraction tools.
+* Establishing session-based state validations.
+* Mapping custom structural logic flows and database relationships.
+* Creating operational separation pipelines between regular consumers and server operators.
+
+---
+
+## 📸 Interface Screenshots
+
+### Login Page
 ![Login Page](screenshots/login-page.png)
 
-## Admin Dashboard
-
+### Admin Dashboard
 ![Admin Dashboard](screenshots/admin-dashboard.png)
 
-## Public Homepage
-
+### Public Homepage
 ![Public Homepage](screenshots/public-homepage.png)
 
 ---
 
-# Key Highlights
+## 🤝 Project Collaborators
 
-* Built using Native PHP
-* Simple admin authentication system
-* CRUD functionality implementation
-* Village information management
-* Community aspiration feature
-* Beginner backend project experience
-
----
-
-# Collaboration
-
-This project was developed collaboratively by a small team.
-
-- Liana Syifa Fauzia handled backend development, application logic, and several frontend sections.
-- Ririn focused on developing the main public interface.
-- Hani contributed to frontend implementation and interface support.
+This application was successfully built by a collective efforts of a small project development squad:
+* **Liana Syifa Fauzia** - Managed the core backend engineering, database structural logic, database query structures, and select frontend technical components.
+* **Ririn** - Spearheaded the visual architecture design and primary interface of the public-facing application pages.
+* **Hani** - Contributed to structural interface adjustments and supporting frontend page styles.
