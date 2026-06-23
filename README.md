@@ -1,5 +1,5 @@
 # 🌐 Language Options:
-**English** | [Bahasa Indonesia](README-id.md)
+**English** | [Bahasa Indonesia](README-id)
 
 ---
 
